@@ -6,6 +6,7 @@
     box-sizing: border-box;
 }
 
+/* 가운데 정렬 */
 body
 {
     width: 100vw;
@@ -18,6 +19,7 @@ body
     background-color: rgb(36, 34, 34);
 }
 
+/* 베너 사이즈 설정 */
 .banner
 {
     width : 600px;
@@ -34,21 +36,25 @@ body
     cursor: pointer;
 
     transition: all .5s;
+    /* 흑백 전환 */
     filter: grayscale();
 
     border-radius: 5px;
 
     box-shadow: 1px 1px 1px #222, 2px 4px 2px rgb(73, 73, 73), 8px 8px 3px rgb(50,50,50) ;
 }
+/* 배너 마우스 올릴 때 */
 .banner:hover
 {
     filter: saturate();
     box-shadow: 1px 2px 25px #fff;
 }
+/* 배너 마우스 올릴 때 글자 띄우기 */
 .banner:hover .message
 {
     opacity: .9;
 }
+/* 로고 */
 .logo
 {
     opacity: 0;
@@ -61,6 +67,7 @@ body
     animation: opacityanimation 6s cubic-bezier(0.63, 0.02, 0.34, 0.93) alternate infinite;
 }
 
+/* click here 설정 */
 .message
 {
     width: 100%;
@@ -83,6 +90,7 @@ body
     text-transform: uppercase;
 }
 
+/* 투명도 및 밑으로 이동 애니메이션 */
 @keyframes opacityanimation
 {
     0%{
@@ -98,6 +106,7 @@ body
     }
 }
 
+/* 행성 설정 */
 .planet
 {
     position: absolute;
@@ -108,7 +117,7 @@ body
     mix-blend-mode: screen;
     animation: planetmove 25s cubic-bezier(0.63, 0.02, 0.34, 0.93) alternate infinite;
 }
-
+/* 행성 애니메이션 */
 @keyframes planetmove {
     0%
     {
@@ -128,7 +137,7 @@ body
         transform: rotateZ(360deg) scale(.5);
     }
 }
-
+/* 행성 사이즈 설정 */
 .planet img
 {
     width: 150px;
