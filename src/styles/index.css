@@ -1,0 +1,108 @@
+
+*
+{
+    margin : 0;
+    padding : 0;
+    box-sizing: border-box;
+}
+
+body
+{
+    width: 100vw;
+    height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: rgb(36, 34, 34);
+}
+
+.banner
+{
+    width : 600px;
+    height: 300px;
+
+    position : relative;
+
+    background-image: url('../images/background.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    overflow: hidden;
+
+    cursor: pointer;
+
+    transition: all .5s;
+    filter: grayscale();
+
+    border-radius: 5px;
+
+    box-shadow: 1px 1px 1px #222, 2px 4px 2px rgb(73, 73, 73), 8px 8px 3px rgb(50,50,50) ;
+}
+.banner:hover
+{
+    filter: saturate();
+    box-shadow: 1px 2px 25px #fff;
+}
+.logo
+{
+    opacity: 0;
+    mix-blend-mode: normal;
+    position : absolute;
+    
+    bottom : 300px;
+    left : 0;
+
+    animation: opacityanimation 6s cubic-bezier(0.63, 0.02, 0.34, 0.93) alternate infinite;
+}
+@keyframes opacityanimation
+{
+    0%{
+        opacity: 0;
+        bottom : 300px;
+    }
+    60%{bottom : 100px;}
+    100%
+    {
+
+        opacity: 1;
+        bottom: 100px;
+    }
+}
+
+.planet
+{
+    position: absolute;
+
+    opacity: .9;
+    top :0;
+    right :-300px;
+    mix-blend-mode: screen;
+    animation: planetmove 25s cubic-bezier(0.63, 0.02, 0.34, 0.93) alternate infinite;
+}
+
+@keyframes planetmove {
+    0%
+    {
+        right : -300px;
+        top : 0;
+        transform: rotateZ(0) scale(.1);
+    }
+    50%
+    {
+        top : 0px;
+        
+    }
+    100%
+    {
+        top : 200px;
+        right : 700px;
+        transform: rotateZ(360deg) scale(.5);
+    }
+}
+
+.planet img
+{
+    width: 150px;
+}
